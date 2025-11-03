@@ -7,7 +7,7 @@ import { faVolumeHigh, faVolumeMute } from "@fortawesome/free-solid-svg-icons";
 import { getWindowDimensions } from "~/utils/window-dimension";
 
 function FullScreenVideo() {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -85,7 +85,7 @@ function FullScreenVideo() {
         <video
           ref={videoRef}
           className="w-full aspect-[16/9] object-cover"
-          autoPlay
+          // autoPlay
           loop
           muted
         >
