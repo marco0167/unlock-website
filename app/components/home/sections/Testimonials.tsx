@@ -160,14 +160,12 @@ function Testimonials() {
   return (
     <div className="text-white min-h-screen overflow-hidden px-5 md:p-8 flex items-center justify-center">
       <section className="container m-auto w-full">
-        <div>
-          <div className="text-3xl md:text-5xl font-sora md:w-3/5 lg:w-2/5  md:text-left font-regular">
-            Trusted by the best
-          </div>
+        <div className="text-3xl md:text-5xl font-sora md:w-3/5 lg:w-2/5  md:text-left font-regular">
+          Trusted by the best
         </div>
 
         {/* Slider Section */}
-        <div className="relative mt-4 md:mt-16 mb-32">
+        <div className="relative mt-6 md:mt-8 mb-32">
           <div ref={containerRef} className="w-full ">
             <div ref={sliderRef} className="flex gap-8 items-center py-8">
               {testimonials.map((testimonial, index) => (
