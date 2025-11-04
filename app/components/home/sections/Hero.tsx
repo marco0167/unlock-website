@@ -42,7 +42,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="md:h-screen container m-auto not-md:px-5 py-20 md:pt-50 pt-25 flex not-md:flex-col gap-y-10 gap-x-20 justify-between">
+    <section className="md:h-screen container m-auto not-md:px-6 md:pb-20 pb-5 md:pt-50 pt-25 flex not-md:flex-col gap-y-9 gap-x-20 justify-between">
 
       <div className="flex-3 flex flex-col gap-y-5  justify-between">
         <h1 className="text-5xl lg:text-[120px] text-neutral-100 font-sora font-light flex flex-col ">
@@ -73,7 +73,7 @@ function Hero() {
 
         <div className="md:gap-y-10 gap-y-5 flex flex-col">
           {/* Subtitle */}
-          <p className="text-neutral-100 text-left text-2xl font-inter font-regular">
+          <p className="text-neutral-100 text-left md:text-2xl text-[16px] font-inter font-regular">
             Unlock provides personalised sport psychology programmes and
             tools, created by leading experts, to help footballers build the
             mental skills to perform at their best.
@@ -101,7 +101,7 @@ function Hero() {
         <img
           src="assets/app-screen/unlock-brain-mockup.jpg"
           alt="Hero"
-          className="w-full h-full object-cover rounded-4xl"
+          className="w-full md:h-full h-[400px] object-cover rounded-4xl"
         />
       </div>
     </section>

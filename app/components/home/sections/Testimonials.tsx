@@ -158,10 +158,10 @@ function Testimonials() {
   };
 
   return (
-    <div className="text-white min-h-screen px-4 md:p-8 flex items-center justify-center">
+    <div className="text-white min-h-screen px-5 md:p-8 flex items-center justify-center">
       <section className="container m-auto w-full">
         <div>
-          <div className="text-[10vw] md:text-5xl  md:w-3/5 lg:w-2/5 text-center md:text-left font-bold">
+          <div className="text-3xl md:text-5xl font-sora md:w-3/5 lg:w-2/5  md:text-left font-regular">
             Trusted by the best
           </div>
         </div>
@@ -182,7 +182,7 @@ function Testimonials() {
           <div className="absolute right-10 -bottom-20 -translate-y-1/2 translate-x-1/2 z-10 flex items-center gap-x-4">
             <button
               onClick={goPrev}
-              className="cursor-pointer w-9 h-9 rounded-full bg-neutral-800 flex items-center justify-center hover:scale-110 transition-transform duration-100"
+              className="cursor-pointer w-9 h-9 rounded-full border border-neutral-100 flex items-center justify-center hover:scale-110 transition-transform duration-100"
               aria-label="Previous testimonial"
             >
               <FontAwesomeIcon
@@ -193,7 +193,7 @@ function Testimonials() {
             <button
               onClick={goNext}
               aria-label="Next testimonial"
-              className="cursor-pointer w-9 h-9 rounded-full bg-neutral-800 flex items-center justify-center hover:scale-110 transition-transform duration-100"
+              className="cursor-pointer w-9 h-9 rounded-full border border-neutral-100 flex items-center justify-center hover:scale-110 transition-transform duration-100"
             >
               <FontAwesomeIcon
                 icon={faChevronRight}

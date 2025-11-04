@@ -39,7 +39,7 @@ function FullScreenVideo() {
   }, []);
 
   return (
-    <section id="full-video-section" className="md:py-15 not-md:p-5 container mx-auto">
+    <section id="full-video-section" className="md:py-15 not-md:px-6 container mx-auto">
       <div className="md:rounded-[46px] rounded-3xl overflow-hidden relative">
         <div
           className="z-10 absolute w-full h-full"

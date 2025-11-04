@@ -274,17 +274,19 @@ function ContentItem({
   return (
     <div
       ref={container}
-      className="w-full md:h-full h-fit absolute md:top-50 left-0 flex not-md:flex-col not-md:gap-y-8 items-center justify-center not-md:py-9 not-md:px-4"
+      className="w-full h-full absolute md:top-50 left-0 not-md:gap-y-8 not-md:py-7 not-md:px-9"
     >
-      <div className="md:hidden bg-[#1e2939] px-3 py-[6px] w-full rounded-[12px] text-xl font-inter font-regular description text-neutral-100">
-        {item.description}
-      </div>
+      <div className="w-full h-full relative">
+
+        <div className="md:hidden bg-[#1e2939] px-3 py-[6px] w-full rounded-[12px] text-[16px] font-inter font-regular description text-neutral-100">
+          {item.description}
+        </div>
         <img
           src={item.image}
           alt="app screen"
-          className="md:absolute top-1/2 left-2/3 md:-translate-x-1/2 md:-translate-y-1/2 h-auto max-h-full md:w-auto w-2/3 max-w-full"
-        />
-
+          className="absolute object-cover md:top-1/2 top-1/3 md:left-2/3 left-1/2 -translate-x-1/2 md:-translate-y-1/2  h-auto md:max-h-full md:w-auto w-[80%] md:max-w-full max-w-[300px]"
+          />
+      </div>
     </div>
   );
 }
@@ -299,14 +301,14 @@ function Showcase() {
 
   return (
     <section className="md:pt-35 pt-20 md:pb-60 pb-30 bg-linear-to-t from-neutral-800 to-background">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-6">
         <h2 className="text-3xl xl:text-[70px] font-sora font-regular text-center text-neutral-100 flex flex-col lg:w-4/6 m-auto md:mb-37 mb-15">
           Learn, build habits, apply tools, and keep progressing.
           <span className="text-neutral-400">All in one place.</span>
         </h2>
       </div>
 
-      <div className="w-full container mx-auto md:h-[85vh] h-screen md:py-14 md:pt-22 text-3xl md:text-5xl font-bold">
+      <div className="w-full container mx-auto md:h-[85vh] h-[400px] md:py-14 md:pt-22 text-3xl md:text-5xl font-bold px-6">
         <div className=" w-full h-full rounded-4xl overflow-hidden relative bg-background flex items-center md:justify-between md:px-16 not-md:px-4">
           <div className="not-md:hidden w-fit z-10 h-fit flex flex-col gap-8">
             {menuItems.map((item, index) => {
@@ -342,7 +344,7 @@ function Showcase() {
             })}
           </div>
 
-          <div className="z-10 not-md:flex not-md:justify-between not-md:w-full">
+          <div className="z-10 not-md:flex not-md:justify-between not-md:w-full pt-30">
             <div
               className="cursor-pointer w-9 h-9 not-md:rotate-270 rounded-full bg-neutral-800 flex items-center justify-center mb-4 hover:scale-110 transition-transform duration-100"
               onClick={() => {
