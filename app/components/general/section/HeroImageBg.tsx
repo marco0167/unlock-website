@@ -14,8 +14,8 @@ function HeroImageBg({
   bgImage,
 }: HeroImageBgProps) {
   return (
-    <section className="md:h-screen h-[80vh] w-full px-4 pt-4">
-      <div className="relative h-full w-full pt-25 rounded-[20px] overflow-hidden">
+    <section className="md:h-screen h-[80vh] w-full md:px-4 md:pt-4">
+      <div className="relative h-full w-full pt-25 md:rounded-[20px] overflow-hidden">
         <img
           src={bgImage}
           alt="Player in an hotel room"

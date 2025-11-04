@@ -85,11 +85,11 @@ function FullScreenVideo() {
         <video
           ref={videoRef}
           className="w-full aspect-[16/9] object-cover"
-          // autoPlay
+          playsInline
           loop
           muted
         >
-          <source src="assets/videos/nike.mp4" type="video/mp4" />
+          <source src="assets/videos/nike.mp4#t=0.001" type="video/mp4" />
         </video>
       </div>
     </section>

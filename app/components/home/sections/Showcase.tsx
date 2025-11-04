@@ -311,8 +311,8 @@ function Showcase() {
 
   return (
     <section className="md:pt-35 pt-20 md:pb-60 pb-30 bg-linear-to-t from-neutral-800 to-background">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl xl:text-[70px] font-sora font-regular text-center text-neutral-100 flex flex-col lg:w-4/6 m-auto md:mb-37 mb-15">
+      <div className="container mx-auto not-md:px-5">
+        <h2 className="text-3xl md:text-5xl lg:text-[70px] font-sora font-regular text-center text-neutral-100 flex flex-col xl:w-5/6 m-auto md:mb-37 mb-15">
           Learn, build habits, apply tools, and keep progressing.
           <span className="text-neutral-400">All in one place.</span>
         </h2>

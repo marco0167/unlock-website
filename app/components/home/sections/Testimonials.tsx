@@ -70,7 +70,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
-    <div className="flex flex-col gap-4 relative w-[330px] aspect-[4/3] md:w-[400px] md:h-[350px] rounded-2xl overflow-hidden bg-gray-800 text-white shadow-lg">
+    <div className="flex flex-col gap-4 relative w-[320px] not-md:aspect-[4/3] md:w-[500px] md:h-[250px] rounded-2xl overflow-hidden bg-gray-800 text-white shadow-lg">
       <div className="absolute w-full h-full">
         <div className="absolute w-full h-full bg-black/70" />
         <img
@@ -83,7 +83,7 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
           }
         />
       </div>
-      <div className="z-10 items-center flex px-3 pt-3 md:px-8 md:pt-8 md:min-h-[180px] flex-grow">
+      <div className="z-10 items-center flex px-3 pt-3 md:px-8 md:pt-8 flex-grow">
         <span className="text-xl italic font-light">"{testimonial.quote}"</span>
       </div>
       <div className="z-10 flex gap-4 p-4 bg-black/20 backdrop-blur-md ">
@@ -114,9 +114,9 @@ function Testimonials() {
   const sliderRef = useRef(null);
   const containerRef = useRef(null);
   const windowWidth = getWindowDimensions().width;
-  const cardWidth = windowWidth < 768 ? 330 : 400;
+  const cardWidth = windowWidth < 768 ? 320 : 500;
 
-  const gap = 64;
+  const gap = 32;
 
   useLayoutEffect(() => {
     if (
@@ -158,7 +158,7 @@ function Testimonials() {
   };
 
   return (
-    <div className="text-white min-h-screen px-5 md:p-8 flex items-center justify-center">
+    <div className="text-white min-h-screen overflow-hidden px-5 md:p-8 flex items-center justify-center">
       <section className="container m-auto w-full">
         <div>
           <div className="text-3xl md:text-5xl font-sora md:w-3/5 lg:w-2/5  md:text-left font-regular">
@@ -168,8 +168,8 @@ function Testimonials() {
 
         {/* Slider Section */}
         <div className="relative mt-4 md:mt-16 mb-32">
-          <div ref={containerRef} className="w-full overflow-hidden">
-            <div ref={sliderRef} className="flex gap-16 items-center py-8">
+          <div ref={containerRef} className="w-full ">
+            <div ref={sliderRef} className="flex gap-8 items-center py-8">
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="card-wrapper ">
                   <TestimonialCard testimonial={testimonial} />

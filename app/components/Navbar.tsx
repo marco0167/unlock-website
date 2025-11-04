@@ -26,7 +26,7 @@ function Navbar() {
               onClick={(e) => {
                 setMobileMenuOpen(!mobileMenuOpen)
               }}
-              className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 "
+              className="group relative inline-flex items-center justify-center rounded-md p-2 hover:bg-white/5 hover:text-white"
             >
               <span className="absolute -inset-0.5 **pointer-events-none**" />
               <span className="sr-only">Open main menu</span>

@@ -4,7 +4,7 @@ import { Linkedin } from "./svgs"
 function Footer() {
   return (
     <section className="bg-neutral-100 pt-20 md:pt-44">
-      <footer className='bg-background flex flex-col container mx-auto md:rounded-t-[46px] rounded-t-[26px] md:px-10 px-5 md:py-13 py-6 gap-y-22'>
+      <footer className='bg-background not-md:w-[95vw] flex flex-col container mx-auto md:rounded-t-[46px] rounded-t-[26px] md:px-10 px-5 md:py-13 py-6 gap-y-22'>
 
          <div className="flex justify-between items-start">
             <ul className="flex flex-col gap-y-5 text-neutral-100 font-inter font-regular md:text-lg text-lg">
