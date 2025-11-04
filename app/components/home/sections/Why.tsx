@@ -16,14 +16,14 @@ function Why() {
           title="Built for the Demands of Today’s Game."
           description="Players know performance isn’t just physical. Unlock gives you the structure, the tools, and the guidance to train your mind like the world’s top athletes."
           image="assets/app-screen/why-1.png"
-          imageClass="bg-neutral-800"
+          imageClass="md:bg-neutral-800"
           />
 
         <FeatureItem
           title="More Than an App. A New Standard."
           description="Our mission is simple: to make mental performance training a standard, not a secret. We give every athlete access to world-leading sport psychology."
           image="assets/app-screen/why-1.png"
-          imageClass="bg-neutral-800"
+          imageClass="md:bg-neutral-800"
         />
       </div>
     </section>

@@ -42,10 +42,10 @@ function Hero() {
   }, []);
 
   return (
-    <section className="md:h-screen container m-auto not-md:px-6 md:pb-20 pb-5 md:pt-50 pt-25 flex not-md:flex-col gap-y-9 gap-x-20 justify-between">
+    <section className="lg:h-screen container m-auto not-lg:px-6 lg:pb-20 pb-5 lg:pt-50 pt-25 flex not-lg:flex-col gap-y-9 gap-x-39 justify-between">
 
-      <div className="flex-3 flex flex-col gap-y-5  justify-between">
-        <h1 className="text-5xl lg:text-[120px] text-neutral-100 font-sora font-light flex flex-col ">
+      <div className="flex-2 flex flex-col gap-y-5  justify-between">
+        <h1 className="text-5xl md:text-8xl lg:text-7xl xl:text-8xl 2xl:text-[120px] text-neutral-100 font-sora font-light flex flex-col ">
           <span className="whitespace-nowrap">Unlock Your</span>
 
           <div
@@ -83,13 +83,13 @@ function Hero() {
           <div className="grid grid-cols-2 gap-x-3 w-fit md:text-2xl text-[16px] text-neutral-100 font-inter font-regular">
             <button
               onClick={() => navigate("/clubs")}
-              className="relative md:px-5 px-4 md:py-[10px] py-1 border-2 box-border border-blue-600 hover:bg-blue-600  rounded-full transition-colors duration-200"
+              className="md:px-5 px-4 md:py-[10px] py-1 border box-border border-blue-600 hover:bg-blue-600  rounded-full transition-colors duration-200"
             >
               Clubs
             </button>
             <button
               onClick={() => navigate("/players")}
-              className="relative md:px-5 px-4 md:py-[10px] py-1 border-2 box-border border-blue-600 hover:bg-blue-600 rounded-full transition-colors duration-200"
+              className="md:px-5 px-4 md:py-[10px] py-1 border box-border border-blue-600 hover:bg-blue-600 rounded-full transition-colors duration-200"
             >
               Players
             </button>

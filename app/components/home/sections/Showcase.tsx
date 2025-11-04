@@ -98,7 +98,7 @@ function MenuItem({
                 autoAlpha: 1,
                 duration: 0.3,
                 onComplete: () => {
-                  setIsAnimating(false);
+                  // setIsAnimating(false);
                 },
               },
               "-=0.1"
@@ -209,7 +209,10 @@ function ContentItem({
     if (isMobile) {
       const tl = gsap.timeline({
         onComplete: () => {
-          setIsAnimating(false);
+          if (isActive) {
+
+            setIsAnimating(false);
+          }
         },
       });
 
@@ -258,11 +261,18 @@ function ContentItem({
           ease: "power1.inOut",
           onComplete: () => {
             if (isActive) {
-              gsap.set(container.current, { zIndex: 5 });
+              gsap.set(container.current, {
+                zIndex: 5,
+              });
             } else {
-              gsap.set(container.current, { x: 300, zIndex: 0 });
+              gsap.set(container.current, {
+                x: 300,
+                zIndex: 0,
+                onComplete: () => {
+                  setIsAnimating(false);
+                }
+              });
             }
-            setIsAnimating(false);
           },
         }
       );

@@ -4,7 +4,7 @@ import { useState } from 'react'
 const navigation = [
   { name: 'Players', href: 'players', current: false },
   { name: 'Clubs', href: 'clubs', current: false },
-  { name: 'Our Mission', href: 'mission', current: false },
+  { name: 'Our Story', href: 'our-story', current: false },
 ]
 
 function classNames(...classes) {

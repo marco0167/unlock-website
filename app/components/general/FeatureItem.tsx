@@ -20,7 +20,7 @@ function FeatureItem({
       </div>
 
       <div className="flex flex-col gap-6 md:w-1/2">
-        <span className="text-3xl md:text-5xl font-sora font-regular">{title}</span>
+        <span className="text-[26px] md:text-5xl font-sora font-regular">{title}</span>
 
         <p className="md:text-2xl font-inter font-regular">{description}</p>
       </div>
