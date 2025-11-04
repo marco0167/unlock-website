@@ -126,10 +126,10 @@ function Testimonials() {
     )
       return;
 
-    const viewportWidth = containerRef.current.clientWidth;
+    // const viewportWidth = containerRef.current.clientWidth;
 
-    const cardCenter = currentIndex * (cardWidth + gap) + cardWidth / 2;
-    const targetX = viewportWidth / 2 - cardCenter;
+    const cardCenter = currentIndex * (cardWidth + gap) + cardWidth / 2 ;
+    const targetX = (cardWidth - (cardWidth / 2) ) - cardCenter;
 
     gsap.to(sliderRef.current, {
       x: targetX,
@@ -165,9 +165,9 @@ function Testimonials() {
         </div>
 
         {/* Slider Section */}
-        <div className="relative mt-6 md:mt-8 mb-32">
+        <div className="relative mb-32">
           <div ref={containerRef} className="w-full ">
-            <div ref={sliderRef} className="flex gap-8 items-center py-8">
+            <div ref={sliderRef} className="flex gap-8 items-center md:py-8 py-7">
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="card-wrapper ">
                   <TestimonialCard testimonial={testimonial} />
@@ -177,7 +177,7 @@ function Testimonials() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="absolute right-10 -bottom-20 -translate-y-1/2 translate-x-1/2 z-10 flex items-center gap-x-4">
+          <div className="absolute right-10 -bottom-14 -translate-y-1/2 translate-x-1/2 z-10 flex items-center gap-x-4">
             <button
               onClick={goPrev}
               className="cursor-pointer w-9 h-9 rounded-full border border-neutral-100 flex items-center justify-center hover:scale-110 transition-transform duration-100"

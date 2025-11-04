@@ -22,7 +22,7 @@ function HeroImageBg({
           className="absolute inset-0 w-full h-full object-cover "
         />
 
-        <div className="relative z-10 text-white pb-24 h-full bg-gradient-to-t not-md:to-100% from-black">
+        <div className="relative z-10 text-white pb-24 px-5 h-full bg-gradient-to-t not-md:to-100% from-black">
           <div className="flex flex-col md:gap-y-13 gap-y-6 container mx-auto justify-end h-full not-md:items-center">
 
             <h1 className="font-sora md:text-7xl text-2xl font-regular md:w-2/3 not-md:text-center">{title}</h1>
