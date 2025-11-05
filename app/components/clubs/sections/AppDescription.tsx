@@ -33,7 +33,7 @@ function AppDescription() {
         </div>
         <Link
           to="/form-contact"
-          className="md:px-5 px-4 md:py-[10px] py-1 border box-border border-blue-600 hover:bg-blue-600 rounded-full transition-colors duration-200"
+          className="md:px-5 px-4 md:py-[10px] text-2xl py-1 border box-border border-blue-600 hover:bg-blue-600 rounded-full transition-colors duration-200"
         >
           Partner with us
         </Link>

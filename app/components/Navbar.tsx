@@ -87,9 +87,9 @@ function Navbar() {
 
             <Link
               to="/waitlist"
-              className="hidden md:flex  rounded-full font-inter font-semibold text-[16px] border-neutral-100 px-4 py-2 text-background bg-neutral-100"
+              className="hidden md:flex items-center rounded-full font-inter font-semibold text-[16px] border-neutral-100 px-4 py-2 text-background bg-neutral-100"
             >
-              Join the Waitlist
+              Join the waitlist
             </Link>
 
           </div>
