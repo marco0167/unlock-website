@@ -116,7 +116,7 @@ function Testimonials() {
   const windowWidth = getWindowDimensions().width;
   const cardWidth = windowWidth < 768 ? 320 : 500;
 
-  const gap = 32;
+  const gap = 20;
 
   useLayoutEffect(() => {
     if (
@@ -160,14 +160,14 @@ function Testimonials() {
   return (
     <div className="text-white min-h-screen overflow-hidden px-5 md:p-8 flex items-center justify-center">
       <section className="container m-auto w-full">
-        <div className="text-3xl md:text-5xl font-sora md:w-3/5 lg:w-2/5  md:text-left font-regular">
+        <div className="text-3xl md:text-5xl font-sora md:text-left font-regular">
           Trusted by the best
         </div>
 
         {/* Slider Section */}
         <div className="relative mb-32">
           <div ref={containerRef} className="w-full ">
-            <div ref={sliderRef} className="flex gap-8 items-center md:py-8 py-7">
+            <div ref={sliderRef} className="flex gap-5 items-center md:py-8 py-7 md:pt-14 pt-10">
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="card-wrapper ">
                   <TestimonialCard testimonial={testimonial} />
