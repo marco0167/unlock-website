@@ -7,6 +7,7 @@ const Linkedin: React.FC<SvgComponentProps> = (props: SvgComponentProps) => (
     width={30}
     height={31}
     fill="none"
+    viewBox="0 0 30 31"
     {...props}
   >
     <g clipPath="url(#a)">

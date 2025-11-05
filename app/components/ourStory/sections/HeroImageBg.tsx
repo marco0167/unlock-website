@@ -1,19 +1,17 @@
 import { Link } from "react-router";
 
 interface HeroImageBgProps {
-  actionTitle: string;
   actionLink: string;
   bgImage: string;
 }
 
 function HeroImageBg({
-  actionTitle,
   actionLink,
   bgImage,
 }: HeroImageBgProps) {
   return (
     <section className="md:h-screen h-[80vh] w-full md:px-4 md:py-4">
-      <div className="relative h-full w-full  md:rounded-[20px] overflow-hidden">
+      <div className="relative h-full w-full md:rounded-[20px] overflow-hidden">
         <img
           src={bgImage}
           alt="Player in an hotel room"
@@ -36,7 +34,7 @@ function HeroImageBg({
               </Link>
             </div>
 
-            <h1 className="font-sora lg:text-6xl xl:text-7xl 2xl:text-8xl sm:text-6xl text-[10vw] leading-26 font-regular flex flex-col lg:text-right text-center">
+            <h1 className="font-sora lg:text-6xl xl:text-7xl 2xl:text-8xl sm:text-6xl text-[10vw] not-md:leading-[100%] font-regular flex flex-col lg:text-right text-center">
               <span>People.</span>
               <span>Purpose.</span>
               <span>Performance.</span>
