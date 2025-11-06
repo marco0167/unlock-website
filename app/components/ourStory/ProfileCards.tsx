@@ -1,4 +1,3 @@
-import React from 'react'
 import { Linkedin } from '../svgs';
 import { Link } from 'react-router';
 
@@ -12,10 +11,10 @@ interface ProfileCardsProps {
 
 function ProfileCards({ imagePath, name, qualifications, description, linkedinName }: ProfileCardsProps) {
   return (
-    <Link to={`https://www.linkedin.com/in/${linkedinName}`} target='_blank' className="md:p-6 p-3 bg-neutral-800 md:rounded-4xl rounded-2xl flex gap-x-6 font-inter font-regular 2xl:text-lg not-md:text-sm">
-      <img src={imagePath} alt={`${name} photo`} className="aspect-square rounded-[14px] 2xl:w-[190px] lg:w-[150px] md:w-[190px] sm:w-[150px] w-[120px] object-cover" />
+    <div className="md:p-6 p-4 bg-neutral-800 md:rounded-4xl rounded-2xl flex not-md:flex-col gap-x-6 gap-y-4 font-inter font-regular 2xl:text-lg not-md:text-sm">
+      <img src={imagePath} alt={`${name} photo`} className="md:aspect-square rounded-[14px] 2xl:w-[190px] lg:w-[150px] md:w-[190px] not-md:w-full not-md:max-h-[200px] object-cover" />
 
-      <div className='flex flex-col justify-between md:gap-y-4'>
+      <div className='flex flex-col justify-between md:gap-y-4 gap-y-6'>
         <p className="mb-2">{description}</p>
 
         <div className='flex justify-between items-end'>
@@ -23,11 +22,12 @@ function ProfileCards({ imagePath, name, qualifications, description, linkedinNa
             <h4 className="font-bold">{name}</h4>
             <p className="">{qualifications}</p>
           </div>
-
-          <Linkedin width={23} height={23} />
+          <Link to={`https://www.linkedin.com/in/${linkedinName}`} target='_blank'>
+            <Linkedin width={23} height={23} />
+          </Link>
         </div>
       </div>
-    </Link>
+    </div>
   )
 }
 

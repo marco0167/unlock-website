@@ -14,12 +14,12 @@ function Profile() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-y-6 not-2xl:col-span-3">
+        <div className="grid md:grid-cols-1 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-6 not-2xl:col-span-3">
           <ProfileCards
             imagePath="assets/images/andrea-profile.png"
             name="Andrea Furst, PhD"
             qualifications="Sport Psychologist | CoFounder"
-            description="Sarah is a leading sport psychologist with over 25 years’ experience supporting Olympic and professional athletes, bringing evidence-based mental training to Unlock’s programmes."
+            description="Performance Psychologist with over 20 years’ experience supporting elite athletes and teams across Olympic and professional sport, specialising in mindset, confidence, and performance under pressure."
             linkedinName="drandreafurstsportpsychologist"
           />
           <ProfileCards
@@ -40,7 +40,7 @@ function Profile() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-y-6 not-2xl:col-span-3">
+        <div className="grid md:grid-cols-1 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-6 not-2xl:col-span-3">
           <ProfileCards
             imagePath="assets/images/sam-profile.jpg"
             name="Sam Holden"
