@@ -71,6 +71,10 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: default;
+}
+
 li {
   margin-bottom: 0;
 }

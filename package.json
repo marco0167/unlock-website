@@ -15,13 +15,14 @@
     "@gsap/react": "^2.1.2",
     "@react-router/node": "^7.9.2",
     "@react-router/serve": "^7.9.2",
+    "@supabase/supabase-js": "^2.80.0",
     "autoprefixer": "^10.4.21",
-    "framer-motion": "^12.23.22",
     "gsap": "^3.13.0",
     "isbot": "^5.1.31",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router": "^7.9.2"
+    "react-router": "^7.9.2",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
     "@react-router/dev": "^7.9.2",
@@ -29,6 +30,7 @@
     "@types/node": "^22",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
+    "@types/react-toastify": "^4.0.2",
     "tailwindcss": "^4.1.14",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
