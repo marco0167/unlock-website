@@ -60,7 +60,7 @@ function Navbar() {
               <Link to="/">
                 <img
                   alt="Your Company"
-                  src="assets/logo.png"
+                  src="assets/logo-light.svg"
                   className="h-6 w-auto sm:h-8"
                 />
               </Link>

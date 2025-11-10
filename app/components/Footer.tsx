@@ -36,7 +36,7 @@ function Footer() {
 
          <div className="flex not-md:flex-col justify-between not-md:items-center gap-y-12">
           <Link to="/">
-            <img src="assets/logo.png" alt="Unlock Logo" className="h-12 md:h-8 w-auto"/>
+            <img src="assets/logo-light.svg" alt="Unlock Logo" className="h-12 md:h-8 w-auto"/>
           </Link>
           <div className="flex gap-x-8">
             <Link to="/terms" className="text-[12px] font-inter font-regular text-neutral-400 hover:scale-105 transition duration-100">Terms of Service</Link>

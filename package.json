@@ -19,8 +19,10 @@
     "autoprefixer": "^10.4.21",
     "gsap": "^3.13.0",
     "isbot": "^5.1.31",
+    "media-chrome": "^4.15.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-player": "^3.3.3",
     "react-router": "^7.9.2",
     "react-toastify": "^11.0.5"
   },
