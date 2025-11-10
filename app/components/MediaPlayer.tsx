@@ -44,8 +44,8 @@ function MediaPlayer() {
           </div>
         </MediaPlayButton>
       </div>
-      <MediaControlBar className="md:p-6 p-2 flex justify-end">
-        <div className="bg-gray-500/50 rounded-full md:p-3 p-1 flex items-center md:gap-x-2">
+      <MediaControlBar className="md:px-6 p-2 pt-18 flex justify-end bg-gradient-to-t from-black/70 to-transparent">
+        <div className="bg-gray-500/50 rounded-full md:p-3 p-1 flex items-center md:gap-x-2 shadow-2xl">
           <MediaMuteButton className="hover:scale-110 h-fit cursor-pointer flex transition bg-transparent not-md:scale-75" />
           <MediaVolumeRange className="hover:scale-110 h-fit cursor-pointer flex transition bg-transparent not-md:scale-75" />
           <MediaFullscreenButton className="hover:scale-110 h-fit cursor-pointer flex transition bg-transparent not-md:scale-75" />
