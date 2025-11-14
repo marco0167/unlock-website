@@ -1,7 +1,16 @@
+import type { LinksFunction } from 'react-router';
 import Footer from '~/components/Footer';
 import HeroImageBg from '~/components/general/section/HeroImageBg';
 import ChooseJourney from '~/components/home/sections/ChooseJourney';
 import AppDescription from '~/components/players/sections/AppDescription';
+
+export const links: LinksFunction = () => [
+  {
+    rel: "preload",
+    href: "assets/images/player-hotel.jpg",
+    as: "image"
+  }
+];
 
 function PlayersPage() {
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { LinksFunction } from "react-router";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -11,6 +12,14 @@ interface FormProps {
   children?: React.ReactNode;
   onSubmit?: () => Promise<any>;
 }
+
+export const links: LinksFunction = () => [
+  {
+    rel: "preload",
+    href: "assets/images/form-img.jpg",
+    as: "image"
+  }
+];
 
 function Form({title, subtitle, quote, quoteBy, onSubmit, children, isDisabled}: FormProps) {
   const [isLoading, setIsLoading] = useState(false);

@@ -3,6 +3,15 @@ import HeroImageBg from '~/components/general/section/HeroImageBg';
 import ChooseJourney from '~/components/home/sections/ChooseJourney';
 
 import AppDescription from '~/components/clubs/sections/AppDescription';
+import type { LinksFunction } from 'react-router';
+
+export const links: LinksFunction = () => [
+  {
+    rel: "preload",
+    href: "assets/images/club.jpg",
+    as: "image"
+  }
+];
 
 function ClubsPage() {
 
