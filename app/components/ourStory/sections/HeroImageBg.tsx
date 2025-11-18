@@ -15,10 +15,10 @@ function HeroImageBg({
         <img
           src={bgImage}
           alt="Player in an hotel room"
-          className="absolute inset-0 w-full h-full object-cover grayscale-100"
+          className="absolute inset-0 w-full h-full object-cover grayscale-0"
         />
 
-        <div className="relative pt-25 z-10 pb-24 px-5 h-full bg-gradient-to-t not-md:to-100% from-blue-600/90 via-black/60 md:via-40% md:to-65% via-40% md:to-transparent">
+        <div className="relative pt-25 z-10 pb-24 px-5 h-full bg-gradient-to-t not-md:to-100% from-black">
 
           <div className="container m-auto h-full flex not-lg:flex-col-reverse lg:items-end items-center not-lg:justify-start gap-y-10">
 

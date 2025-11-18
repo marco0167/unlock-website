@@ -1,4 +1,4 @@
-import { faPause } from "@fortawesome/free-solid-svg-icons";
+import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   MediaController,
@@ -22,6 +22,8 @@ function MediaPlayer() {
       ([entry]) => {
         if (!entry.isIntersecting) {
           element.pause();
+        } else {
+          element.play();
         }
       },
       {
@@ -57,20 +59,20 @@ function MediaPlayer() {
         <MediaPlayButton noTooltip className="bg-transparent">
           <div
             slot="play"
-            className="z-1 bg-white not-md:scale-60 cursor-pointer  w-fit px-10 py-[10px] rounded-full text-black text-2xl font-inter font-regular hover:scale-110 transition-transform "
+            className="z-1 bg-[#0A0A0A]/30 backdrop-blur-md not-md:scale-60 cursor-pointer  w-fit px-3 pt-[11px] pb-[9px] rounded-full text-black text-2xl font-inter font-regular hover:scale-110 transition-transform "
           >
-            Play
+            <FontAwesomeIcon icon={faPlay} color="white"/>
           </div>
           <div
             slot="pause"
-            className="z-1 bg-white not-md:scale-60 cursor-pointer w-fit px-3 py-[14px] flex items-center rounded-full text-black text-2xl font-inter font-regular hover:scale-110 transition-transform "
+            className="z-1 bg-[#0A0A0A]/30 backdrop-blur-md not-md:scale-60 cursor-pointer w-fit px-3 py-[14px] flex items-center rounded-full text-black text-2xl font-inter font-regular hover:scale-110 transition-transform "
           >
-            <FontAwesomeIcon icon={faPause} />
+            <FontAwesomeIcon icon={faPause} color="white"/>
           </div>
         </MediaPlayButton>
       </div>
-      <MediaControlBar className="md:px-6 p-2 pt-18 flex justify-end bg-gradient-to-t from-black/70 to-transparent">
-        <div className="bg-gray-500/50 rounded-full md:p-3 p-1 flex items-center md:gap-x-2 shadow-2xl">
+      <MediaControlBar className="md:px-6 md:pb-6 p-2 pt-18 flex justify-end bg-gradient-to-t from-black/30 to-transparent">
+        <div className="bg-[#0A0A0A]/30 backdrop-blur-md rounded-full md:p-3 p-1 flex items-center md:gap-x-2 shadow-2xl">
           <MediaMuteButton className="hover:scale-110 h-fit cursor-pointer flex transition bg-transparent not-md:scale-75" />
           <MediaVolumeRange className="hover:scale-110 h-fit cursor-pointer flex transition bg-transparent not-md:scale-75" />
           <MediaFullscreenButton className="hover:scale-110 h-fit cursor-pointer flex transition bg-transparent not-md:scale-75" />

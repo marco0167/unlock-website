@@ -33,14 +33,14 @@ function Profile() {
       </div>
 
       <div className="grid lg:grid-cols-5 2xl:grid-cols-2 2xl:gap-x-26 gap-x-16 md:gap-y-14 gap-y-10">
-        <div className="flex flex-col gap-y-6 not-2xl:col-span-2">
+        <div className="flex flex-col gap-y-6 not-2xl:col-span-2 order-1 lg:order-2">
           <h2 className="font-sora font-regular xl:text-5xl lg:text-4xl md:text-5xl text-4xl">Founders & Advisors</h2>
           <p className="font-inter font-regular xl:text-2xl md:text-xl">
             Unlock’s Founder, Sam, and Advisor, Matt, have both experienced the need for mental skills.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-1 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-6 not-2xl:col-span-3">
+        <div className="grid md:grid-cols-1 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-6 not-2xl:col-span-3  order-2 lg:order-1">
           <ProfileCards
             imagePath="assets/images/sam-profile.jpg"
             name="Sam Holden"

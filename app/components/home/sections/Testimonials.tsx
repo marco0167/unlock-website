@@ -1,11 +1,10 @@
 import gsap from "gsap";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-import { getWindowDimensions } from "~/utils/window-dimension";
 
 const testimonials = [
   {
@@ -99,7 +98,9 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
           />
         </div>
         <div className="flex flex-col justify-center">
-          <span className="font-semibold text-md md:text-lg">{testimonial.name}</span>
+          <span className="font-semibold text-md md:text-lg">
+            {testimonial.name}
+          </span>
           <span className="text-gray-300 font-medium text-xs md:text-sm">
             {testimonial.title}
           </span>
@@ -109,43 +110,45 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   );
 };
 
-function Testimonials() {
+const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const sliderRef = useRef(null);
-  const containerRef = useRef(null);
-  const windowWidth = getWindowDimensions().width;
-  const cardWidth = windowWidth < 768 ? 320 : 500;
+  const [isInView, setIsInView] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const windowWidth = typeof window !== "undefined" ? window.innerWidth : 1000;
+  const cardWidth = windowWidth < 768 ? 320 : 500;
   const gap = 20;
 
   useLayoutEffect(() => {
-    if (
-      !sliderRef.current ||
-      !containerRef.current ||
-      typeof gsap === "undefined"
-    )
-      return;
+    if (!sliderRef.current || !containerRef.current || typeof gsap === "undefined") return;
 
-    // const viewportWidth = containerRef.current.clientWidth;
+    const cardCenter = currentIndex * (cardWidth + gap) + cardWidth / 2;
+    const targetX = cardWidth - cardWidth / 2 - cardCenter;
 
-    const cardCenter = currentIndex * (cardWidth + gap) + cardWidth / 2 ;
-    const targetX = (cardWidth - (cardWidth / 2) ) - cardCenter;
+    const animConfig = {
+      duration: 1,
+      ease: "power2.out",
+      overwrite: "auto",
+    };
 
     gsap.to(sliderRef.current, {
       x: targetX,
-      duration: 1,
-      ease: "power3.out",
+      ...animConfig,
     });
 
-    gsap.utils.toArray(sliderRef.current?.children).forEach((card, index) => {
+    const children = gsap.utils.toArray(sliderRef.current.children);
+    children.forEach((card: any, index: number) => {
       gsap.to(card, {
         scale: index === currentIndex ? 1 : 0.8,
         opacity: index === currentIndex ? 1 : 0.7,
-        duration: 1,
-        ease: "power3.out",
+        ...animConfig,
       });
     });
-  }, [currentIndex]);
+  }, [currentIndex, cardWidth]);
 
   const goNext = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -157,6 +160,38 @@ function Testimonials() {
     );
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.4 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isInView && !isHovered) {
+      timerRef.current = setInterval(() => {
+        goNext();
+      }, 3500);
+    } else {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    }
+
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [isInView, isHovered]);
+
   return (
     <div className="text-white min-h-screen overflow-hidden px-5 md:p-8 flex items-center justify-center">
       <section className="container m-auto w-full">
@@ -166,10 +201,18 @@ function Testimonials() {
 
         {/* Slider Section */}
         <div className="relative mb-32">
-          <div ref={containerRef} className="w-full ">
-            <div ref={sliderRef} className="flex gap-5 items-center md:py-8 py-7 md:pt-14 pt-10">
+          <div ref={containerRef} className="w-full">
+            <div
+              ref={sliderRef}
+              className="flex gap-5 items-center md:py-8 py-7 md:pt-14 pt-10"
+            >
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="card-wrapper ">
+                <div
+                  key={index}
+                  className="card-wrapper"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
                   <TestimonialCard testimonial={testimonial} />
                 </div>
               ))}
@@ -203,5 +246,6 @@ function Testimonials() {
       </section>
     </div>
   );
-}
+};
+
 export default Testimonials;
