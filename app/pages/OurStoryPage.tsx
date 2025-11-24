@@ -1,10 +1,10 @@
 import type { LinksFunction } from 'react-router';
 import Footer from '~/components/Footer';
-import ChooseJourney from '~/components/home/sections/ChooseJourney';
-import HeroImageBg from '~/components/ourStory/sections/HeroImageBg';
-import Profile from '~/components/ourStory/sections/Profile';
-import Story from '~/components/ourStory/sections/Story';
-import Values from '~/components/ourStory/sections/Values';
+import ChooseJourney from '~/sections/home/ChooseJourney';
+import HeroImageBg from '~/sections/ourStory/HeroImageBg';
+import Profile from '~/sections/ourStory/Profile';
+import Story from '~/sections/ourStory/Story';
+import Values from '~/sections/ourStory/Values';
 
 export const links: LinksFunction = () => [
   {
@@ -23,7 +23,7 @@ function OurStoryPage() {
         bgImage="assets/images/sam-conference.jpg"
       />
       <Profile />
-      <Values />
+      {/* <Values /> */}
       <Story />
       <ChooseJourney />
       <Footer />

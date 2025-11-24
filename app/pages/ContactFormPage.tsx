@@ -1,10 +1,9 @@
-import CustomTextarea from '~/components/general/form/CustomTextarea'
-import Form from '~/components/general/form/Form'
-import CustomInput from '~/components/general/form/CustomInput'
+import CustomTextarea from '~/components/form/CustomTextarea'
+import Form from '~/components/form/Form'
+import CustomInput from '~/components/form/CustomInput'
 import supabase from '~/supabase/supabase';
 import { useEffect, useState } from 'react';
 import validateEmail from '~/utils/validateEmail';
-
 
 function ContactFormPage() {
   const [disabled, setDisabled] = useState(false);
@@ -73,7 +72,7 @@ function ContactFormPage() {
     }
   }
   return (
-    <section className='min-h-screen bg-gradient-to-b from-neutral-800 to-30% to-background flex items-center'>
+    <section className='min-h-screen md:bg-gradient-to-b bg-gradient-to-t from-neutral-800 md:to-30% to-100% to-background flex items-center'>
       <Form
         title="Join us in supporting athletes beyond the pitch."
         subtitle='We work with clubs and organisations to make mindset training part of everyday performance.'

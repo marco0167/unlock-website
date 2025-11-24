@@ -7,3 +7,6 @@ export function getWindowDimensions() {
   };
 }
 
+export function isWindowBelow768() {
+  return window.innerWidth < 768;
+}

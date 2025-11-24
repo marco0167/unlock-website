@@ -1,8 +1,7 @@
 import Footer from '~/components/Footer';
-import HeroImageBg from '~/components/general/section/HeroImageBg';
-import ChooseJourney from '~/components/home/sections/ChooseJourney';
+import HeroImageBg from '~/sections/HeroImageBg';
 
-import AppDescription from '~/components/clubs/sections/AppDescription';
+import AppDescription from '~/sections/clubs/AppDescription';
 import type { LinksFunction } from 'react-router';
 
 export const links: LinksFunction = () => [
@@ -24,7 +23,6 @@ function ClubsPage() {
         bgImage="assets/images/club.jpg"
       />
       <AppDescription />
-      <ChooseJourney />
       <Footer />
     </>
   )

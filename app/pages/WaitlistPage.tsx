@@ -1,5 +1,5 @@
-import Form from '~/components/general/form/Form'
-import CustomInput from '~/components/general/form/CustomInput'
+import Form from '~/components/form/Form'
+import CustomInput from '~/components/form/CustomInput'
 import { useEffect, useState } from 'react';
 import supabase from '~/supabase/supabase';
 import validateEmail from '~/utils/validateEmail';
@@ -71,9 +71,9 @@ function WaitlistPage() {
     }
   }
   return (
-    <section className='min-h-screen bg-gradient-to-b from-neutral-800 to-30% to-background flex items-center'>
+    <section className='min-h-screen md:bg-gradient-to-b bg-gradient-to-t from-neutral-800 md:to-30% to-100% to-background flex items-center'>
       <Form
-        title="Join the waitlist"
+        title="Apply for Access"
         subtitle='Sign up to get early access, updates, and exclusive content from our team.'
         quote="Unlock makes mental training stick. It's genuinely useful and I've been able to apply it directly."
         quoteBy="Ben Mee, Brentford F.C."

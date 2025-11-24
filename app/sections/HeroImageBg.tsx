@@ -1,0 +1,42 @@
+import { useNavigate } from "react-router";
+import Button from "~/components/Button";
+
+interface HeroImageBgProps {
+  title: string;
+  actionTitle: string;
+  actionLink: string;
+  bgImage: string;
+}
+
+function HeroImageBg({
+  title,
+  actionTitle,
+  actionLink,
+  bgImage,
+}: HeroImageBgProps) {
+  const navigate = useNavigate();
+  return (
+    <section className="md:h-screen h-[80vh] w-full md:px-4 md:py-4">
+      <div className="relative h-full w-full pt-25 md:rounded-[20px] overflow-hidden">
+        <img
+          src={bgImage}
+          alt="Player in an hotel room"
+          className="absolute inset-0 w-full h-full object-cover "
+        />
+
+        <div className="relative z-10 text-white pb-24 px-5 h-full bg-gradient-to-t not-md:to-100% from-black">
+          <div className="flex flex-col md:gap-y-13 gap-y-6 container mx-auto justify-end h-full not-md:items-center">
+
+            <h1 className="font-sora md:text-7xl text-2xl font-regular md:w-2/3 not-md:text-center">{title}</h1>
+
+            <div className="w-fit">
+              <Button onClick={() => navigate(actionLink)} label={actionTitle} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default HeroImageBg;

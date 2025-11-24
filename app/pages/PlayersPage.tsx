@@ -1,8 +1,7 @@
 import type { LinksFunction } from 'react-router';
 import Footer from '~/components/Footer';
-import HeroImageBg from '~/components/general/section/HeroImageBg';
-import ChooseJourney from '~/components/home/sections/ChooseJourney';
-import AppDescription from '~/components/players/sections/AppDescription';
+import HeroImageBg from '~/sections/HeroImageBg';
+import AppDescription from '~/sections/player/AppDescription';
 
 export const links: LinksFunction = () => [
   {
@@ -18,12 +17,11 @@ function PlayersPage() {
     <>
       <HeroImageBg
         title="Mental performance isn’t a bonus,  it’s what separates good from great."
-        actionTitle="Join the waitlist"
+        actionTitle="Apply for Access"
         actionLink="/waitlist"
         bgImage="assets/images/player-hotel.jpg"
       />
       <AppDescription />
-      <ChooseJourney />
       <Footer />
     </>
   )

@@ -90,7 +90,7 @@ function Navbar() {
               to="/waitlist"
               className="hidden md:flex items-center rounded-full font-inter font-semibold text-[16px] border-neutral-100 px-4 py-2 text-background bg-neutral-100 hover:bg-neutral-100/0 hover:text-neutral-100 border transition-colors duration-300"
             >
-              Join the waitlist
+              Apply for Access
             </Link>
           </div>
         </div>
@@ -122,7 +122,7 @@ function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="block rounded-xl border-2 px-3 py-2 text-base font-medium border-neutral-100 bg-white active:bg-neutral-100/0 active:text-neutral-100 text-black transition-colors duration-300 text-center mt-3"
               >
-                Join Waitlist
+                Apply for Access
               </Link>
             </div>
           </div>

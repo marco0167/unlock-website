@@ -1,11 +1,11 @@
 import type { LinksFunction } from 'react-router';
 import Footer from '~/components/Footer';
-import ChooseJourney from '~/components/home/sections/ChooseJourney';
-import FullScreenVideo from '~/components/home/sections/FullScreenVideo';
-import Hero from '~/components/home/sections/Hero';
-import Showcase from '~/components/home/sections/Showcase';
-import Testimonials from '~/components/home/sections/Testimonials';
-import Why from '~/components/home/sections/Why';
+import ChooseJourney from '~/sections/home/ChooseJourney';
+import FullScreenVideo from '~/sections/home/FullScreenVideo';
+import Hero from '~/sections/home/Hero';
+import ShowcaseV2 from '~/sections/home/ShowcaseV2';
+import Testimonials from '~/sections/home/Testimonials';
+import Why from '~/sections/home/Why';
 
 export const links: LinksFunction = () => [
   {
@@ -21,7 +21,8 @@ function HomePage() {
     <>
       <Hero />
       <FullScreenVideo />
-      <Showcase />
+      {/* <Showcase /> */}
+      <ShowcaseV2 />
       <Why />
       <Testimonials />
       <ChooseJourney />
