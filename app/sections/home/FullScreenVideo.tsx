@@ -34,7 +34,7 @@ function FullScreenVideo() {
   return (
     <section
       id="full-video-section"
-      className="md:py-15 not-md:px-6 container mx-auto"
+      className="md:py-15 not-lg:px-6 container mx-auto"
     >
       <MediaPlayer />
     </section>

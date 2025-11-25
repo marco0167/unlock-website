@@ -7,14 +7,6 @@ const InfiniteScrollText = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const spansRef = useRef<HTMLSpanElement[]>([]);
 
-  const [resizeTick, setResizeTick] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => setResizeTick(p => p + 1);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const wrapper = wrapperRef.current;
@@ -46,7 +38,7 @@ const InfiniteScrollText = () => {
       const easeType = "elastic.out(0.4,0.3)";
 
       tl
-        .to({}, { duration: pause }) // Wait
+        .to({}, { duration: pause })
         .to(wrapper, { y: -step, duration: moveSpeed, ease: easeType }, "step1")
         .to(spans[0], { color: C_HIDDEN, duration: moveSpeed, ease: easeType }, "step1")
         .to(spans[1], { color: C1, duration: moveSpeed, ease: easeType }, "step1")
@@ -70,7 +62,7 @@ const InfiniteScrollText = () => {
     }, containerRef);
 
     return () => ctx.revert();
-  }, [resizeTick]);
+  }, []);
 
   const addToRefs = (el: HTMLSpanElement | null) => {
     if (el && !spansRef.current.includes(el)) {
@@ -83,13 +75,13 @@ const InfiniteScrollText = () => {
       <div ref={containerRef} className="relative lg:w-4/6 m-auto">
         <div ref={wrapperRef} className="flex flex-col gap-4">
 
-          <h2 className="text-[50px] md:text-[70px] font-sora font-regular text-center leading-none flex flex-col gap-y-4">
+          <h2 className="text-4xl sm:text-[50px] md:text-[70px] font-sora font-regular text-center leading-none flex flex-col gap-y-4">
             <span ref={addToRefs}>Private.</span>
             <span ref={addToRefs}>Personalised.</span>
             <span ref={addToRefs}>Accessible.</span>
           </h2>
 
-          <h2 className="text-[50px] md:text-[70px] font-sora font-regular text-center leading-none flex flex-col gap-y-4">
+          <h2 className=" text-4xl sm:text-[50px] md:text-[70px] font-sora font-regular text-center leading-none flex flex-col gap-y-4">
             <span ref={addToRefs}>Private.</span>
             <span ref={addToRefs}>Personalised.</span>
             <span ref={addToRefs}>Accessible.</span>
@@ -103,22 +95,22 @@ const InfiniteScrollText = () => {
 
 function Why() {
   return (
-    <section className="container m-auto px-5">
+    <section className="container m-auto not-lg:px-6">
       <InfiniteScrollText />
 
-      <div className="flex flex-col gap-y-32 md:gap-36 items-center md:pt-4 overflow-hidden">
+      <div className="flex flex-col gap-y-32 md:gap-36 items-center md:pt-4 pb-50 overflow-hidden">
         <FeatureItem
           title="Built for the Demands of Today’s Game."
           description="Players know performance isn’t just physical. Unlock gives you the structure, the tools, and the guidance to train your mind like the world’s top athletes."
           image="assets/app-screen/why-1.png"
-          imageClass="md:bg-neutral-800"
+          imgContainerClass="md:bg-neutral-800"
           />
 
         <FeatureItem
           title={"More Than an App.\nA New Standard."}
           description="Our mission is simple; to make mental performance training accessible and affordable, not a secret for the top 1%."
           image="assets/app-screen/why-1.png"
-          imageClass="md:bg-neutral-800"
+          imgContainerClass="md:bg-neutral-800"
         />
       </div>
     </section>

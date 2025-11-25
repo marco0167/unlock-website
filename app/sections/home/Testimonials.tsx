@@ -173,8 +173,8 @@ const Testimonials = () => {
   }, [isInView, isHovered]);
 
   return (
-    <div className="text-white min-h-screen overflow-hidden px-5 md:p-8 flex items-center justify-center">
-      <section className="container m-auto w-full">
+    <div className="text-white overflow-hidden md:pb-40 pb-25 px-5 md:p-8 flex items-center justify-center">
+      <section className="container mx-auto w-full">
         <div className="text-3xl md:text-5xl font-sora md:text-left font-regular">
           Trusted by the best
         </div>

@@ -53,6 +53,8 @@
 
   --color-background: #101012;
 
+  --breakpoint-xs: 30rem;
+
   --font-weight-regular: 400;
 }
 

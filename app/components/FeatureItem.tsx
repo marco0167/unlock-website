@@ -1,18 +1,19 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
-import { getWindowDimensions } from "~/utils/window-dimension";
 
 function FeatureItem({
   title,
   description,
   image,
-  imageClass = "",
+  imgContainerClass = "",
+  imgClass = "",
 }: {
   title: string;
   description: string;
   image: string;
-  imageClass?: string;
+  imgContainerClass?: string;
+  imgClass?: string;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLDivElement>(null);
@@ -20,7 +21,6 @@ function FeatureItem({
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (getWindowDimensions().width < 768) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -85,12 +85,12 @@ function FeatureItem({
     >
       <div
         ref={imgRef}
-        className={`md:rounded-[46px] rounded-[20px] not-md:w-[100%] md:w-1/2 max-w-[800px] md:h-120 mb-4 ${imageClass}`}
+        className={`md:rounded-[46px] rounded-[20px] not-md:w-[100%] md:w-1/2 max-w-[800px] md:h-120 mb-4 ${imgContainerClass}`}
       >
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover rounded-lg "
+          className={`w-full h-full object-cover rounded-lg ${imgClass}`}
         />
       </div>
 

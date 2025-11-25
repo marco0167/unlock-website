@@ -51,7 +51,7 @@ function Story() {
               never had.
             </p>
             <img
-              src="assets/images/sam-conference.jpg"
+              src="assets/images/sam-playing.jpeg"
               alt="Sam at a conference"
               className="rounded-[14px] object-cover aspect-16/9 md:hidden"
             />

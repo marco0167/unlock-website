@@ -34,6 +34,7 @@ function ShowcaseV2() {
   const textContainerRef = useRef<HTMLDivElement>(null);
   const mqtTimelineRef = useRef<gsap.core.Timeline | null>(null);
   const mqtRevTimelineRef = useRef<gsap.core.Timeline | null>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
 
   const mobileScreensRef = useRef<HTMLDivElement>(null);
 
@@ -43,6 +44,10 @@ function ShowcaseV2() {
     if (isWindowBelow768()) {
       const ctxMS = gsap.context(() => {
         if (!mobileScreensRef.current) return;
+        if (!progressBarRef.current) return;
+
+        const progressBar = progressBarRef.current
+          .firstElementChild as HTMLDivElement;
 
         const screens: HTMLDivElement[] = gsap.utils.toArray(
           mobileScreensRef.current.children
@@ -52,6 +57,21 @@ function ShowcaseV2() {
         screens.forEach((s) => gsap.set(s.lastChild, { autoAlpha: 0 }));
 
         const tl = gsap.timeline({ repeat: -1 });
+        const progressBarTl = gsap.timeline({ repeat: -1 });
+
+        progressBarTl
+          .to(progressBar, {
+            width: 0,
+            duration: 6.7,
+            ease: "none",
+          })
+          .set(progressBar, { opacity: 0 })
+          .to(progressBar, {
+            width: "100%",
+            duration: 0.7,
+            opacity: 1,
+            ease: "power2.inOut",
+          });
 
         screens.forEach((screen, index) => {
           tl.to(screen, {
@@ -74,12 +94,15 @@ function ShowcaseV2() {
               autoAlpha: 0,
               duration: 0.5,
             })
-            .to(screen, {
-              autoAlpha: 0,
-              y: 50,
-              duration: 0.5
-            }, "<=0.2")
-
+            .to(
+              screen,
+              {
+                autoAlpha: 0,
+                y: 50,
+                duration: 0.5,
+              },
+              "<=0.2"
+            );
         });
       }, mobileScreensRef);
 
@@ -152,14 +175,14 @@ function ShowcaseV2() {
 
   return (
     <section className="md:pt-35 pt-20 md:pb-60 pb-30 bg-linear-to-t from-neutral-800 to-background">
-      <div className="container mx-auto not-md:px-5">
+      <div className="container mx-auto not-lg:px-6">
         <h2 className="text-[5vw] sm:text-3xl md:text-5xl lg:text-[70px] font-sora font-regular text-center text-neutral-100 flex flex-col xl:w-5/6 m-auto md:mb-37 mb-15">
           Learn, build habits, progress, perform.
           <span className="text-neutral-400">All in one place.</span>
         </h2>
       </div>
 
-      <div className="w-full container mx-auto md:h-[85vh] h-auto md:py-14 lg:pt-22 text-3xl md:text-5xl font-bold px-6">
+      <div className="w-full container mx-auto md:h-[85vh] h-auto md:py-14 lg:pt-22 not-lg:px-6 text-3xl md:text-5xl font-bold">
         <div className="w-full h-full rounded-4xl overflow-hidden relative not-md:p-2 flex items-center md:justify-between not-md:bg-background md:bg-gradient-to-tr md:from-background to-70% to-transparent">
           {/* Rotated Wrapper */}
           <div
@@ -215,24 +238,30 @@ function ShowcaseV2() {
             </div>
           </div>
 
-
           {/* Mobile Screens */}
           <div
+            ref={progressBarRef}
+            className="md:hidden xs:w-[230px] w-[46vw] h-[3px] bg-neutral-400 rounded-full absolute top-5 left-1/2 -translate-x-1/2 overflow-hidden"
+          >
+            <div className="w-full h-full bg-white rounded-full "></div>
+          </div>
+
+          <div
             ref={mobileScreensRef}
-            className="md:hidden flex  h-[600px] w-full relative"
+            className="md:hidden block xs:h-[600px] h-[130vw] w-full relative mt-6 overflow-hidden"
           >
             {menuItems.map((item, index) => (
               <div
                 key={index}
-                className={`h-full absolute top-0 left-1/2 -translate-x-1/2`}
+                className="h-full w-auto absolute top-0 left-1/2 -translate-x-1/2"
               >
-                <img src={item.image} className="h-full object-contain" />
-                <div className="absolute opacity-0 bottom-10 left-1/2 -translate-x-1/2 px-6 w-full h-full">
-                  <div className="bg-gradient-to-t from-black/100 to-60% to-transparent w-full h-full text-center flex flex-col justify-end rounded-4xl pb-5">
-                    <h3 className="text-3xl font-sora font-bold mb-4">
+                <img src={item.image} className="h-full w-auto max-w-none" />
+                <div className="absolute opacity-0 bottom-[5vw] xs:bottom-[26px] left-1/2 -translate-x-1/2 xs:w-[254px] not-xs:w-[55vw] h-full">
+                  <div className="bg-gradient-to-t from-black/100 to-60% to-transparent not-xs:px-2 h-full text-center flex flex-col justify-end xs:rounded-4xl rounded-[8vw] pb-5">
+                    <h3 className="xs:text-2xl text-xl font-sora font-bold xs:mb-4 mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-base font-inter font-medium text-neutral-200">
+                    <p className="xs:text-base text-sm font-inter font-medium text-neutral-200">
                       {item.description}
                     </p>
                   </div>
